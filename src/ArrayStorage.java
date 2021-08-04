@@ -39,6 +39,9 @@ public class ArrayStorage {
     }
 
     int size() {
+        for (int i = 0; i < storage.length; i++){
+            System.out.println(i);
+        }
         return 0;
     }
 }
