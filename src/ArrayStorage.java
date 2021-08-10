@@ -10,6 +10,7 @@ public class ArrayStorage {
     void clear() {
         for(int i = 0; i < size; i++) {
             storage[i] = null;
+            size = 0;
         }
     }
 
@@ -35,7 +36,7 @@ public class ArrayStorage {
             }
             for (int k = i; k < size - 1; k++) {
                 storage[k] = storage[k + 1];
-                size--;
+                size = size - 1;
             }
         }
     }
