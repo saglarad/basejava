@@ -10,8 +10,8 @@ public class ArrayStorage {
     void clear() {
         for(int i = 0; i < size; i++) {
             storage[i] = null;
-            size = 0;
         }
+        size = 0;
     }
 
     void save(Resume r) {
@@ -34,10 +34,10 @@ public class ArrayStorage {
                 storage[i] = null;
                 break;
             }
+            System.arraycopy(storage[i], 0, storage[i-1], 0, size - 1);
             for (int k = i; k < size - 1; k++) {
                 storage[k] = storage[k + 1];
-                size = size - 1;
-                System.arraycopy(storage[i], 0, storage[i-1], 0, size - 1);
+                size--;
             }
         }
     }
