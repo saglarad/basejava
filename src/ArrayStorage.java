@@ -37,6 +37,7 @@ public class ArrayStorage {
             for (int k = i; k < size - 1; k++) {
                 storage[k] = storage[k + 1];
                 size = size - 1;
+                System.arraycopy(storage[i], 0, storage[i-1], 0, size - 1);
             }
         }
     }
