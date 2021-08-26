@@ -1,3 +1,5 @@
+package com.urise.webapp.storage;
+
 import java.util.Arrays;
 
 /**
@@ -27,17 +29,22 @@ public class ArrayStorage {
         }
         return null;
     }
+    void update (Resume resume) {
+        Resume oldResume = get(resume.uuid);
+        oldResume.email = resume.email;
+    }
 
     void delete(String uuid) {
         int i = 0;
         while (i < size) {
-            if (storage[i].equals(uuid)) {
+            if (storage[i].uuid.equals(uuid)) {
                 break;
             }
             i++;
         }
         if (i < size) {
             System.arraycopy(storage, i + 1, storage, i, size - 1 - i);
+            storage[size-1] = null;
             size--;
         }
     }
